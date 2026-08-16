@@ -35,10 +35,10 @@ when load demands it — not prematurely). The topology:
 
 - **quappe-service** — a Deployment with a **PersistentVolume** for the SQLite
   file + embedding-model cache (mounted at `/data`). `QUAPPE_SECRET` from a
-  Secret. Runs the image `DOCKERHUB_USER/quappe-service`.
+  Secret. Runs the image `quappeorg/quappe-service`.
 - **quappe-web** — a stateless Deployment, `PRIVATE_SERVICE_URL` set to the
   in-cluster service DNS (e.g. `http://quappe-service:3000`). Image
-  `DOCKERHUB_USER/quappe-web`.
+  `quappeorg/quappe-web`.
 - **Ingress** terminating TLS in front of `quappe-web`; the service is
   cluster-internal only.
 - Scale `quappe-web` horizontally freely; `quappe-service` is single-writer
@@ -65,7 +65,7 @@ docker run -p 8080:3000 -e PRIVATE_SERVICE_URL=http://host.docker.internal:3000 
 
 GitHub Actions builds and pushes to Docker Hub on every push to `main`
 (`latest` + short SHA) and on version tags `v*` (semver). Images:
-`DOCKERHUB_USER/quappe-service`, `DOCKERHUB_USER/quappe-web`.
+`quappeorg/quappe-service`, `quappeorg/quappe-web`.
 
 The pushing repos need two secrets: `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN`
 (a Docker Hub access token).
