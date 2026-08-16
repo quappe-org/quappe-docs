@@ -17,6 +17,8 @@ design decisions. Written for humans: contributors, curious users, researchers.
   themes, and the function-not-diagnosis accessibility modes.
 - **[architecture.md](./architecture.md)** — the platform split, the
   API-as-contract principle, the data layer.
+- **[running.md](./running.md)** — how to run the platform (local, build,
+  Docker, Docker Hub, k8s-later).
 - **[decisions/](./decisions/)** — the "why", so it isn't re-litigated: no
   thesis forking, no "emotional" type, cookie-first i18n, accessibility naming.
 
