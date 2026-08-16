@@ -7,21 +7,18 @@ design decisions. Written for humans: contributors, curious users, researchers.
 > notes in each code repo's `.meta/*.skill` files. Those stay next to the code
 > as the engineering reference; here they become readable documentation.
 
-## Contents (planned)
+## Contents
 
-- **`idea.md`** — the problem (language is imprecise, social media breeds
-  fronts) and the target (an argumentation graph toward defined, coexisting
-  positions). From `.meta/.project`.
-- **`mechanics.md`** — theses, arguments, fork variants, voting, the Fibonacci
-  budget + complexity model, lifecycle, quality score, germination. From
-  `.meta/.project` + `.meta/.data.skill`.
-- **`design.md`** — the UI language (editorial/calm, top-down), themes and the
-  function-not-diagnosis accessibility modes. From `.meta/.ui.skill`.
-- **`architecture.md`** — the platform split (service/web/ops/insight/docs),
-  the API-as-contract principle, the data layer.
-- **`decisions/`** — the "why", so they aren't re-litigated: no thesis forking
-  (relations → revision → merge), why "emotional" was removed, why cookie-first
-  i18n, the accessibility naming decision.
+- **[idea.md](./idea.md)** — the problem, the target, the rules, and the stance
+  that the system should bend toward the good.
+- **[mechanics.md](./mechanics.md)** — theses, arguments, fork variants, voting,
+  the Fibonacci budget + complexity model, lifecycle, quality, germination.
+- **[design.md](./design.md)** — the UI language (editorial/calm, top-down),
+  themes, and the function-not-diagnosis accessibility modes.
+- **[architecture.md](./architecture.md)** — the platform split, the
+  API-as-contract principle, the data layer.
+- **[decisions/](./decisions/)** — the "why", so it isn't re-litigated: no
+  thesis forking, no "emotional" type, cookie-first i18n, accessibility naming.
 
 ## Why a separate docs repo
 
