@@ -1,7 +1,7 @@
 # Decision: cookie-first locale strategy
 
 **Status:** decided. Paraglide strategy order is
-`cookie url preferredLanguage baseLocale` (cookie before url).
+`cookie preferredLanguage url baseLocale`.
 
 ## The bug it fixes
 
@@ -11,17 +11,28 @@ top-priority `url` strategy resolved the unprefixed path back to the base locale
 (`en`). The `de` cookie existed but was never reached. Net effect: setting the
 language to German, then navigating, silently reverted to English.
 
-## Why cookie-first (not localizing every link)
+## Why this order
 
-Two ways to fix it: run every `href` through `localizeHref`, or reorder the
-strategy. We chose reorder because:
+- **cookie first** — a remembered choice always wins and stays stable across
+  navigation, even on unprefixed links. This is the core fix.
+- **preferredLanguage second** — a first-time visitor with no cookie is served
+  their browser language (`Accept-Language`). A German browser lands on German
+  content at `/` without hunting for a setting — the friendly welcome for a
+  multilingual, humanist platform.
+- **url third** — explicit `/de/…` prefixes still work for deliberately shared,
+  language-specific links.
+- **baseLocale last** — English fallback.
 
-- For an anonymous app, the **remembered preference** (cookie) is the natural
-  model.
-- It's robust for **every** link, current and future, without anyone remembering
-  to localize hrefs.
-- Explicit `/de/` prefixes still work (for shareable links); no cookie → `en`
-  default still holds.
+## Trade-off
 
-The trade-off — a shared `/de/…` link opened by someone whose cookie is `fr`
-shows `fr` — is rare and acceptable for an anonymous platform.
+`/` is not deterministically English — it follows the visitor's browser
+language (or their cookie). For a multilingual discourse platform that's
+desirable, not a defect. Someone who wants to share a specific language links
+`/de/…` explicitly.
+
+## Why not localize every link instead
+
+The alternative fix was running every `href` through `localizeHref`. We chose
+the strategy order because it's robust for **every** link, current and future,
+without anyone remembering to localize hrefs — and it doubles as the friendly
+first-visit behaviour above.
