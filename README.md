@@ -32,8 +32,9 @@ will never read the code.
 ## Platform
 
 Part of the Quappe platform: **quappe-service** (API/DB/logic) ·
-**quappe-web** (UI) · **quappe-ops** (operations) · **quappe-insight**
-(analytics) · **quappe-docs** (this).
+**quappe-web** (UI) · **quappe-github-bridge** (issue sync) ·
+**quappe-ops** (operations) · **quappe-insight** (analytics) ·
+**quappe-docs** (this).
 
 ## License
 

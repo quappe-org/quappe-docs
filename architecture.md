@@ -10,6 +10,7 @@ clients (CLI, app, analytics) without touching the core.
 |------|------|
 | **quappe-service** | The API + storage + all domain logic. The single source of truth. |
 | **quappe-web** | The browser UI. Presentation-only; consumes the service API. |
+| **quappe-github-bridge** | Syncs GitHub issues into Quappe as theses (issue backlog → structured discussion). |
 | **quappe-docs** | This — the idea, mechanics, design, decisions. |
 | **quappe-ops** | Operational setup (k8s, metrics, logs). Later, when load demands it. |
 | **quappe-insight** | Data visualisation / meta reporting. Later. |
@@ -23,6 +24,7 @@ Keeping the contract explicit is what allows:
 - **quappe-web** today,
 - a **CLI** tomorrow (a good CLI is the best proof the API is complete),
 - a mobile **app** wrapper,
+- **quappe-github-bridge** importing issues via `/api/import/theses`,
 - **quappe-insight** reading the same data.
 
 ## How web talks to the service
