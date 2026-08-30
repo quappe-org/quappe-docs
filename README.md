@@ -13,6 +13,8 @@ design decisions. Written for humans: contributors, curious users, researchers.
   that the system should bend toward the good.
 - **[mechanics.md](./mechanics.md)** — theses, arguments, fork variants, voting,
   the Fibonacci budget + complexity model, lifecycle, quality, germination.
+- **[use-cases/](./use-cases/)** — concrete applications of the idea, e.g.
+  [prioritizing a Git backlog](./use-cases/git-backlog-prioritization.md).
 - **[design.md](./design.md)** — the UI language (editorial/calm, top-down),
   themes, and the function-not-diagnosis accessibility modes.
 - **[architecture.md](./architecture.md)** — the platform split, the
@@ -20,7 +22,8 @@ design decisions. Written for humans: contributors, curious users, researchers.
 - **[running.md](./running.md)** — how to run the platform (local, build,
   Docker, Docker Hub, k8s-later).
 - **[decisions/](./decisions/)** — the "why", so it isn't re-litigated: no
-  thesis forking, no "emotional" type, cookie-first i18n, accessibility naming.
+  thesis forking, no "emotional" type, cookie-first i18n, accessibility naming,
+  Projects-v2 as the bridge source.
 
 ## Why a separate docs repo
 
