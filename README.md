@@ -23,7 +23,10 @@ design decisions. Written for humans: contributors, curious users, researchers.
   Docker, Docker Hub, k8s-later).
 - **[decisions/](./decisions/)** — the "why", so it isn't re-litigated: no
   thesis forking, no "emotional" type, cookie-first i18n, accessibility naming,
-  Projects-v2 as the bridge source.
+  Projects-v2 as the bridge source, the durable event/history foundation.
+- **[roadmap.md](./roadmap.md)** — the session-by-session execution plan from the
+  2026-09-25 platform review: the two-tier event architecture, parallel tracks,
+  acceptance criteria. A living plan — keep it current.
 
 ## Why a separate docs repo
 
